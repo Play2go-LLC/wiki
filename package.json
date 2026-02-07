@@ -2,16 +2,16 @@
   "name": "play2go-wiki",
   "type": "module",
   "devDependencies": {
-    "@unocss/preset-attributify": "66.5.9",
-    "@unocss/transformer-directives": "66.5.9",
-    "@unocss/transformer-variant-group": "66.5.9",
-    "sass": "1.94.2",
-    "unocss": "66.5.9",
+    "@unocss/preset-attributify": "66.5.10",
+    "@unocss/transformer-directives": "66.5.10",
+    "@unocss/transformer-variant-group": "66.5.10",
+    "sass": "1.96.0",
+    "unocss": "66.5.10",
     "vitepress": "1.6.4",
     "vitepress-plugin-tabs": "0.7.3",
-    "vitepress-sidebar": "1.33.0",
+    "vitepress-sidebar": "1.33.1",
     "vue": "3.5.25",
-    "markdownlint-cli": "0.46.0"
+    "markdownlint-cli": "0.47.0"
   },
   "scripts": {
     "dev": "vitepress dev",
@@ -23,6 +23,6 @@
     "fixandcommit": "markdownlint --fix *.md && markdownlint --fix src/ && git commit -am 'Автоматическая обработка линтером (команда bun run fixandcommit)'"
   },
   "dependencies": {
-    "@vueuse/core": "14.0.0"
+    "@vueuse/core": "14.1.0"
   }
 }
