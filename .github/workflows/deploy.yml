@@ -2,8 +2,7 @@ name: Deploy
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
 
 jobs:
   deploy:
@@ -22,58 +21,9 @@ jobs:
 
       - name: Deploy to Server
         run: |
-          export PATH="$HOME/.bun/bin:$PATH"
-          if [ -f ~/.bun/bin/bun ]; then
-            BUN_CMD="$HOME/.bun/bin/bun"
-          else
-            BUN_CMD="bun"
-          fi
-
-          ssh -v -T -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << 'EOF'
-          set -x
-          export PATH="$HOME/.bun/bin:$PATH"
-          # Check various possible locations for bun
-          if which bun 2>/dev/null; then
-            BUN_CMD="bun"
-          elif [ -f ~/.bun/bin/bun ]; then
-            BUN_CMD="$HOME/.bun/bin/bun"
-          elif [ -f /root/.bun/bin/bun ]; then
-            BUN_CMD="/root/.bun/bin/bun"
-          elif [ -f /usr/local/bin/bun ]; then
-            BUN_CMD="/usr/local/bin/bun"
-          else
-            echo "Bun not found, checking if it was installed before..."
-            if [ -d ~/.bun ]; then
-              echo "Bun directory exists, trying to find executable..."
-              find ~/.bun -name "bun" -type f 2>/dev/null | head -1
-              BUN_CMD="$(find ~/.bun -name "bun" -type f 2>/dev/null | head -1)"
-              if [ -z "$BUN_CMD" ]; then
-                echo "Reinstalling bun..."
-                curl -fsSL https://bun.sh/install | bash
-                export PATH="$HOME/.bun/bin:$PATH"
-                BUN_CMD="$HOME/.bun/bin/bun"
-              fi
-            else
-              echo "Installing bun..."
-              curl -fsSL https://bun.sh/install | bash
-              export PATH="$HOME/.bun/bin:$PATH"
-              BUN_CMD="$HOME/.bun/bin/bun"
-            fi
-          fi
-          echo "Using bun: $BUN_CMD"
-          which bun || echo "bun not in PATH"
-          ls -la ~/.bun/bin/ 2>/dev/null || echo "bun directory not found"
-          cd /root/wiki
-          git pull
-          $BUN_CMD install
-          $BUN_CMD run build
-          pkill -f "vitepress preview" || true
-          sleep 2
-          cd /root/wiki
-          nohup $BUN_CMD run preview --host 0.0.0.0 > /tmp/wiki.log 2>&1 < /dev/null &
-          disown
-          sleep 3
-          echo "Process started:"
-          ps aux | grep "vitepress preview" | grep -v grep || echo "Process not found"
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << 'EOF'
+            cd /root/wiki
+            git pull
+            docker compose build
+            docker compose up -d
           EOF
-

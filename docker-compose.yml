@@ -1,0 +1,7 @@
+services:
+  wiki:
+    build: .
+    container_name: wiki
+    restart: always
+    ports:
+      - "3000:80"
