@@ -4,4 +4,4 @@ services:
     container_name: wiki
     restart: always
     ports:
-      - "3000:80"
+      - "127.0.0.1:3000:80"

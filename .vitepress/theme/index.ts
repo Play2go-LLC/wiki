@@ -1,4 +1,3 @@
-// https://vitepress.dev/guide/custom-theme
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import './style/base.scss'
@@ -11,7 +10,7 @@ export default {
   extends: DefaultTheme,
   Layout: Layout,
   enhanceApp({ app, router, siteData }) {
-    enhanceAppWithTabs(app)
+    enhanceAppWithTabs(app as any) 
     app.component('AImg', AImg)
   }
 } satisfies Theme
