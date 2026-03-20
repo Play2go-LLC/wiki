@@ -3,6 +3,7 @@ order: 5
 authors:
   - c1oudychan
   - envizar
+  - luverktoya
 ---
 
 # Привязка домена к серверу
@@ -47,7 +48,7 @@ authors:
 
 ## Использование TCPShield {#tcp-shield}
 
-В случае блокировки IP адреса ущла мы рекомендуем использовать TCPShield.
+В случае блокировки IP адреса узла мы рекомендуем использовать TCPShield.
 
 - Зайдите на [panel.tcpshield.com](https://panel.tcpshield.com), нажмите Register.
 - Заполните требуемые данные, зарегистрируйтесь и войдите в аккаунт.
