@@ -43,3 +43,34 @@ authors:
 и если SRV запись не прогружается, происходит обращение к стандартному
 порту Майнкрафта. Эта проблема **на стороне вашего провайдера/DNS сервера**,
 и наша поддержка в такой ситуации ничем не поможет.
+
+
+## Использование TCPShield
+
+В случае блокировки IP адреса ноды мы рекомендуем использовать TCPShield.
+
+- Зайдите на [panel.tcpshield.com](//panel.tcpshield.com), нажмите Register.
+- Введите все данные (имя и телефон можно любые), зарегистрируйтесь и войдите в аккаунт.
+![TCPShield Panel](/minecraft/domain/tcpshield-register.png)
+- В панели нажмите Add Service, далее Add network (Minecraft) и введите любое название.
+![TCPShield Panel](/minecraft/domain/tcpshield-dash.png)
+- Нажмите на созданную сеть, зайдите в Backends, нажмите Add Set и введите IP адрес сервера и любое название бэкенда.
+![TCPShield Panel](/minecraft/domain/tcpshield-backend.png)
+::: info Важно
+Для того что-бы сервер получал корректный IP игрока, вам нужно включить Proxy Protocol.
+- Если вы используете Velocity: velocity.toml -> haproxy-protocol = true
+- Если вы используете Paper: config/paper-global.yml -> proxy-protocol: true
+:::
+- Зайдите в Domains, нажмите Add Domain, выберите созданный Backend Set и введите свой домен.
+::: info Использование рут домена (example.com)
+- Если вы хотите использовать домен формата example.com, добавьте его и верифицируйте с помощью TXT записи.
+- После этого создайте **CNAME** запись play.example.com, которая ведёт на EXAMPLE.ipv4.tcpshield.com (нужную запись можно найти на этой же странице)
+- Создайте SRV запись и заполните её как на скриншоте.
+![TCPShield Panel](/minecraft/domain/tcpshield-srv.png)
+
+:::
+::: info Использование play домена (play.example.com)
+- Добавьте домен и создайте **CNAME** запись play.example.com, которая ведёт на EXAMPLE.ipv4.tcpshield.com (нужную запись можно найти на этой же странице)
+:::
+
+*Более подробная документация доступна на [сайте TCPShield](https://docs.tcpshield.com/panel/)*
