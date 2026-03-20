@@ -36,7 +36,7 @@ authors:
 
 ## :warning: Важный момент {#important-notice}
 
-Если на Вашей ноде есть сервер с портом 25565 (стандартный порт Майнкрафта),
+Если на Вашем узле есть сервер с портом 25565 (стандартный порт Майнкрафта),
 то иногда он может появляться вместо Вашего.
 
 Происходит это из-за того, что сначала берётся A/CNAME запись домена,
@@ -47,22 +47,22 @@ authors:
 
 ## Использование TCPShield
 
-В случае блокировки IP адреса ноды мы рекомендуем использовать TCPShield.
+В случае блокировки IP адреса ущла мы рекомендуем использовать TCPShield.
 
-- Зайдите на [panel.tcpshield.com](//panel.tcpshield.com), нажмите Register.
-- Введите все данные (имя и телефон можно любые), зарегистрируйтесь и войдите в аккаунт.
+- Зайдите на [panel.tcpshield.com](https://panel.tcpshield.com), нажмите Register.
+- Заполните требуемые данные, зарегистрируйтесь и войдите в аккаунт.
 ![TCPShield Panel](/minecraft/domain/tcpshield-register.png)
 - В панели нажмите Add Service, далее Add network (Minecraft) и введите любое название.
 ![TCPShield Panel](/minecraft/domain/tcpshield-dash.png)
 - Нажмите на созданную сеть, зайдите в Backends, нажмите Add Set и введите IP адрес сервера и любое название бэкенда.
 ![TCPShield Panel](/minecraft/domain/tcpshield-backend.png)
 ::: info Важно
-Для того что-бы сервер получал корректный IP игрока, вам нужно включить Proxy Protocol.
-- Если вы используете Velocity: velocity.toml -> haproxy-protocol = true
-- Если вы используете Paper: config/paper-global.yml -> proxy-protocol: true
+Для того чтобы сервер получал корректный IP игрока, вам нужно включить Proxy Protocol.
+- Если вы используете Velocity: `velocity.toml` -> `haproxy-protocol = true`
+- Если вы используете Paper: `config/paper-global.yml` -> `proxy-protocol: true`
 :::
 - Зайдите в Domains, нажмите Add Domain, выберите созданный Backend Set и введите свой домен.
-::: info Использование рут домена (example.com)
+::: info Использование домена верхнего уровня (example.com)
 - Если вы хотите использовать домен формата example.com, добавьте его и верифицируйте с помощью TXT записи.
 - После этого создайте **CNAME** запись play.example.com, которая ведёт на EXAMPLE.ipv4.tcpshield.com (нужную запись можно найти на этой же странице)
 - Создайте SRV запись и заполните её как на скриншоте.
