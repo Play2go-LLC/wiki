@@ -6,6 +6,8 @@ authors:
 
 # OpenVPN
 
+<VpnProtocolBlockedNotice />
+
 ## Что это? {#what}
 
 [OpenVPN](https://openvpn.net/) — это популярный VPN-протокол с открытым исходным кодом, который обеспечивает безопасное и зашифрованное соединение через интернет.
