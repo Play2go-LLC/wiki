@@ -7,9 +7,10 @@ node_modules
 .idea
 .vscode
 .obsidian
+.vs
 
 # Vim
 *.s[a-v][a-z]
 *.sw[a-p]
 
-bun.lockb
+bun.lock
