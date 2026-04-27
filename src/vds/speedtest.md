@@ -37,6 +37,6 @@ snap run speedtest --accept-license --accept-gdpr -s 44081
 snap run speedtest --accept-license --accept-gdpr -s 13764
 ```
 ```bash
-# Швеция/Финляндия - Telia
-snap run speedtest --accept-license --accept-gdpr -s 14928
+# Швеция/Финляндия - GSL Networks
+snap run speedtest --accept-license --accept-gdpr -s 65088
 ```
