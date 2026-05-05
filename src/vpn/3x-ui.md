@@ -2,11 +2,12 @@
 order: 4
 authors:
   - envizar
+  - whydarcy
 ---
 
 # 3x-ui
 
-## Что это? {#what}
+## Что это? teast {#what}
 
 [3x-ui](https://github.com/MHSanaei/3x-ui) — продвинутая веб-панель для управления Xray VPN, поддерживающая
 множество протоколов (Vmess, VLESS, Trojan, ShadowSocks и Wireguard). В панели есть управление
