@@ -10,7 +10,8 @@ nLogin - это плагин для сервера Minecraft, который п�
 ## Установка {#install}
 
 1. Скачайте плагин с [официального сайта](https://www.nickuc.com/en/#plugins);
-2. Выполните действия из [данной статьи](/minecraft/installplugins).
+2. Скачайте плагин с [Black-Minecraft.com](https://black-minecraft.com/resources/3391)
+3. Выполните действия из [данной статьи](/minecraft/installplugins).
 
 ## Конфигурация {#config}
 
