@@ -22,6 +22,7 @@ authors:
 Если вы используете NS Cloudflare, укажите все как на скриншоте, замените данные на свои.
 ![A Record](/minecraft/domain/a-record.png)
 :::
+
 ## Если у вас GAMING сервер {#gaming}
 
 - В **Name** укажите `_minecraft._tcp.<поддомен>`. Впишите `_minecraft._tcp`, если поддомен не нужен.
@@ -44,6 +45,10 @@ authors:
 Если вы используете NS Cloudflare, укажите все как на скриншоте, замените данные на свои.
 ![SRV Record](/minecraft/domain/srv-record.png)
 :::
+
+## Проверка подключения {#verification}
+
+После обновления DNS проверьте адрес в клиенте Minecraft. Для независимой проверки доступности используйте [проверку статуса сервера ServerBuddy](https://serverbuddy.net/tools/minecraft-server-status). Сервис следует по SRV-записи Java Edition и опрашивает конечный адрес и порт. Это помогает отличить проблему с DNS от тайм-аута, отказа в подключении или ответа, который не соответствует протоколу Minecraft.
 
 ## Использование TCPShield {#tcp-shield}
 
@@ -70,7 +75,9 @@ authors:
 
 :::
 ::: info Использование play домена (play.example.com)
+
 - Добавьте домен и создайте **CNAME** запись play.example.com, которая ведёт на EXAMPLE.ipv4.tcpshield.com (нужную запись можно найти на этой же странице)
+
 :::
 
 *Более подробная документация доступна на [сайте TCPShield](https://docs.tcpshield.com/panel/)*
