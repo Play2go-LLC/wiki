@@ -41,6 +41,10 @@ snap run speedtest --accept-license --accept-gdpr -s 13764
 snap run speedtest --accept-license --accept-gdpr -s 14164
 ```
 ```bash
+# Швеция - Telenor AB
+snap run speedtest --accept-license --accept-gdpr -s 34441
+```
+```bash
 # Польша - GSL Networks
 snap run speedtest --accept-license --accept-gdpr -s 65089
 ```
